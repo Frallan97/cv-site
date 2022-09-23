@@ -15,7 +15,20 @@ const MainBody = React.forwardRef(
         }}
         className="title bg-transparent bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
       >
-        <div id="stars"></div>
+        {/* 
+          <div id="canvas_div">
+            <canvas id="canvas"></canvas>
+          </div>
+
+          <script src="../particle/utils.js"></script>
+          <script src="../particle/collision.js"></script>
+          <script src="../particle/ball.js"></script>
+          <script src="../particle/wall.js"></script>
+          <script src="../particle/heap.js"></script>
+          <script src="../particle/event-list.js"></script>
+
+          <script src="../particle/main.js"></script> */}
+
         <Container className="text-center">
           <h1 ref={ref} className="display-1">
             {title}
