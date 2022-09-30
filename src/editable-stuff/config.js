@@ -63,7 +63,14 @@ const repos = {
 const leadership = {
   show: true,
   heading: "Team work",
-  message:"I had the honor to a part of the team of 4 pepole that wrote the ticketsystem used on Lundakarnevalen 2022. The most valueable learning experience to date. The prof that you can do anything you set your mind to if you are willing to speend the time and the sweat.",
+  message:"I had the honor to a part of the team of 4 pepole that wrote the ticketsystem used on Lundakarnevalen 2022. \
+          The most valueable learning experience to date. The prof that you can do anything you set your mind to if you are \
+          willing to spend the time and the sweat. The process was very educative. We had our chare of tuff days with long hours.\
+           I reed a database course paralel to doing this project. I was told about triggers and transactions in sql databases and \
+           what could go wrong. I got to experience them going wrong live. Of course this could be avoided. But doing a large scale \
+           system for the first time we feelt great inprovments quickly. Some concluding thoughts from the project was that scale matters \
+           and that logging actions can save you a lot of time. The most important takeaway was that admin tools really matters if\
+            you as the programer do not want to do a lot of manual work. ",
   images: [
     { 
       img: require("../editable-stuff/lundakarnevalens-invigning-2022.jpg"), 
