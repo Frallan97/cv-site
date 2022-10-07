@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ethers } from "ethers";
 import ErrorMessage from "./ErrorMessage";
 import TxList from "./TxList";
-import style from "./Donations.css";
 
 const startPayment = async ({ setError, setTxs, ether, addr }) => {
   try {
@@ -25,9 +24,23 @@ const startPayment = async ({ setError, setTxs, ether, addr }) => {
   }
 };
 
+const connectWallet = async ({ setError, setTxs }) => {
+  try {
+    if (!window.ethereum)
+      throw new Error("No crypto wallet found. Please install it.");
+
+    await window.ethereum.send("eth_requestAccounts");
+
+  } catch (err) {
+    setError(err.message);
+  }
+};
+
+
 export default function Donation() {
   const [error, setError] = useState();
   const [txs, setTxs] = useState([]);
+  const addr = "0x88E7F20AD805d7E56186d9E7911873a17336E5E3";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,34 +50,40 @@ export default function Donation() {
       setError,
       setTxs,
       ether: data.get("ether"),
-      addr: data.get("addr")
+      addr: addr
     });
   };
+
+  const handleConnect = async (e) => {
+    e.preventDefault();
+    await connectWallet({
+      setError,
+      setTxs
+    });
+  }
 
   return (
     <form className="m-4" onSubmit={handleSubmit}>
       {/* <div className="credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-white"> */}
-      <div style={{textAlign:'center' }}>
+      <div className="pb-3 text-center card "  >
         <main className="mt-4 p-4">
           <h1 className="text-xl font-semibold text-gray-700 text-center">
             Etherium donations: 
           </h1>
-          <div className="">
-            <div className="my-3">
-              <input
-                name="ether"
-                type="text"
-                className="input input-bordered block w-full focus:ring focus:outline-none"
-                placeholder="Amount in ETH"
-              />
-            </div>
+          <div className="my-2">
+            <input
+              name="ether"
+              type="text"
+              
+              placeholder="Amount in ETH"
+            />
           </div>
         </main>
-        <footer className="p-4">
+        <footer>
           <div >
             <button
-              type="connect"
-              className="btn btn-primary connect-button focus:ring focus:outline-none w-full"
+              onClick={handleConnect}
+              className="btn btn-primary connect-button "
             >
               Connect to MetaMask
             </button>
@@ -72,7 +91,7 @@ export default function Donation() {
           <div style={{padding: '10px 10px' , textAlign:'center' }}>
             <button
               type="submit"
-              className="btn btn-primary submit-button focus:ring focus:outline-none w-full"
+              className="btn btn-primary submit-button "
             >
               Donate
             </button>
