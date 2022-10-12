@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.778eeed7.css",
-    "main.js": "/static/js/main.5759df0c.js",
+    "main.js": "/static/js/main.b4068eae.js",
     "static/js/787.4b24f717.chunk.js": "/static/js/787.4b24f717.chunk.js",
     "static/media/lundakarnevalens-invigning-2022.jpg": "/static/media/lundakarnevalens-invigning-2022.0df86d6aa4a76719f4f2.jpg",
     "static/media/KB-2014.jpg": "/static/media/KB-2014.0417bb87b6c96c33df6c.jpg",
     "static/media/frans_prof.jpg": "/static/media/frans_prof.1f73a60113ea60b27ecb.jpg",
     "index.html": "/index.html",
     "main.778eeed7.css.map": "/static/css/main.778eeed7.css.map",
-    "main.5759df0c.js.map": "/static/js/main.5759df0c.js.map",
+    "main.b4068eae.js.map": "/static/js/main.b4068eae.js.map",
     "787.4b24f717.chunk.js.map": "/static/js/787.4b24f717.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.778eeed7.css",
-    "static/js/main.5759df0c.js"
+    "static/js/main.b4068eae.js"
   ]
 }
